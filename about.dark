@@ -1,0 +1,211 @@
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return MaterialApp(
+    home:Scaffold(
+      backgroundColor:Colors.white,
+      appBar:AppBar(title:Text("About")),
+      body:SingleChildScrollView(
+        child:Column(
+        children:[Row(
+          
+        crossAxisAlignment:CrossAxisAlignment.start,
+      children:[
+        Container(padding:EdgeInsets.fromLTRB(20,50,0,0),child:TextWidget()),
+        Spacer(flex:1),
+               Container(child:Image.network("https://www.mypum.com/wp-content/uploads/2017/01/IMG_7521-min.jpg",width:200),color:Colors.black,margin:EdgeInsets.fromLTRB(10,30,10,0))
+               ]
+      ),
+                  Cards(),
+                  Images(),
+                  Container(padding:EdgeInsets.all(30),child:IconsView()),
+                  Container(padding:EdgeInsets.fromLTRB(20,0,20,0),child:AboutView())
+                 ]))
+    )
+   );
+    
+  }
+  
+}
+
+class TextWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Column(
+            mainAxisAlignment:MainAxisAlignment.start,
+            crossAxisAlignment:CrossAxisAlignment.start,
+      children:[
+        
+       Text("John MacDonald",
+          
+            style:TextStyle(
+            color:Colors.black,
+              fontSize:24
+            )),
+        Container(padding:EdgeInsets.all(8),child:TextWidget1()),
+     
+       Container(padding:EdgeInsets.fromLTRB(30,30,0,0),child:Button())
+        
+        
+      ]
+    );
+    
+  }
+  
+}
+class TextWidget1 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Row(
+      
+      children:[
+        Icon(Icons.location_on),
+        Text("Los Angels,CA")
+      ]);
+    
+  }
+  
+}
+class Button extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+      
+    return RaisedButton(
+    
+      onPressed:(){},
+       color:Colors.green,
+    child:Text("Follow"),
+   
+    );
+  }
+  
+}
+class Card1 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Column(
+           
+      children:[
+        
+       Text("34",
+          
+            style:TextStyle(
+            color:Colors.black,
+              fontSize:18
+            )),
+        Text("Posts")
+        
+      ]
+    );
+    
+  }
+  
+}
+class Card2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Column(
+            
+      
+      children:[
+        
+       Text("1256",
+            
+            style:TextStyle(
+            color:Colors.black,
+              fontSize:18
+            )),
+        
+        Text("Followers")  
+      ]
+    );
+    
+  }
+  
+}
+class Cards extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Row(
+            mainAxisAlignment:MainAxisAlignment.start,
+            crossAxisAlignment:CrossAxisAlignment.start,
+      children:[
+        Container(margin:EdgeInsets.fromLTRB(50,30,20,20),child:Card1()),
+        Container(margin:EdgeInsets.fromLTRB(50,30,20,20),child:Card2())
+      
+        
+      ]
+    );
+    
+  }
+  
+}
+class Images extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return Center(child:
+                Row(
+ mainAxisAlignment:MainAxisAlignment.center,                 crossAxisAlignment:CrossAxisAlignment.center,
+                  children:[
+                   Image.network("https://colesfuneraldirectors.co.uk/wp-content/uploads/2019/11/ColesBanner1_0000_Layer-14.jpg",width:100),
+                  Image.network("https://www.pandotrip.com/wp-content/uploads/2018/09/Seigantoji-Pagoda-and-Nachi-Falls-in-Nacho-Japan.jpg",width:100),
+                  Image.network("https://colesfuneraldirectors.co.uk/wp-content/uploads/2019/11/ColesBanner1_0000_Layer-14.jpg",width:100),
+                 Image.network("https://www.pandotrip.com/wp-content/uploads/2018/09/Seigantoji-Pagoda-and-Nachi-Falls-in-Nacho-Japan.jpg",width:100)
+                 
+                ]));
+  }
+  
+}
+class IconsView extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    
+    return Center(child:Row(
+      mainAxisAlignment:MainAxisAlignment.spaceAround,
+      crossAxisAlignment:CrossAxisAlignment.center,
+      children:[
+        
+        Container(margin:EdgeInsets.fromLTRB(30,0,20,20),child:Icon(Icons.face,size:40)),
+        Container(margin:EdgeInsets.fromLTRB(30,0,20,20),child:Icon(Icons.face,size:40)),
+       Container(margin:EdgeInsets.fromLTRB(30,0,20,20),child:Icon(Icons.face,size:40)),
+       Container(margin:EdgeInsets.fromLTRB(30,0,20,20),child:Icon(Icons.face,size:40)),
+    ]));
+    
+  }
+  
+}
+class AboutView extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment:MainAxisAlignment.start,
+      crossAxisAlignment:CrossAxisAlignment.start,
+      children:[
+        Text("About",
+            style:TextStyle(
+            fontSize:24,
+            color:Colors.black
+            )
+            ),
+        
+        Container(margin:EdgeInsets.fromLTRB(0,10,0,0),
+        child:Text("The left column is placed in a Container to constrain its width. Finally, the UI is constructed with the entire row (containing the left column and the image) inside a Card.",softWrap:true
+                 ))
+      ]
+    );
+   
+  }
+  
+}
