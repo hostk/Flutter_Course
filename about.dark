@@ -10,8 +10,10 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
    return MaterialApp(
     home:Scaffold(
-      backgroundColor:Colors.white,
-      appBar:AppBar(title:Text("About")),
+      //backgroundColor:Colors.white70,
+      appBar:AppBar(title:Text("About"),
+                   backgroundColor:Colors.lime[900]
+                   ),
       body:SingleChildScrollView(
         child:Column(
         children:[Row(
@@ -21,10 +23,13 @@ class MyApp extends StatelessWidget{
         Container(padding:EdgeInsets.fromLTRB(20,50,0,0),child:TextWidget()),
         Spacer(flex:1),
                Container(
-      child:Image.network("https://www.mypum.com/wp-content/uploads/2017/01/IMG_7521-min.jpg",
-                                     
-                                             width:200,fit:BoxFit.cover)
-                 ,color:Colors.black,margin:EdgeInsets.fromLTRB(10,30,10,0))
+                
+                 decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color:Colors.amber
+            ),
+      child:Image.network("https://www.mypum.com/wp-content/uploads/2017/01/IMG_7521-min.jpg",width:150,height:230),margin:EdgeInsets.fromLTRB(10,30,10,0))
+                 
                ]
       ),
                   Cards(),
@@ -33,7 +38,6 @@ class MyApp extends StatelessWidget{
                   Container(padding:EdgeInsets.all(30),child:IconsView()),
                   Divider(
                     color:Colors.black12,
-                    
                     thickness:1,
                   ), Container(padding:EdgeInsets.fromLTRB(30,20,30,0),child:AboutView())
                  ]))
@@ -57,7 +61,8 @@ class TextWidget extends StatelessWidget{
           
             style:TextStyle(
             color:Colors.black,
-              fontSize:24
+              fontSize:24,
+              fontWeight:FontWeight.w800
             )),
         Container(padding:EdgeInsets.all(8),child:TextWidget1()),
      
@@ -93,8 +98,9 @@ class Button extends StatelessWidget{
         borderRadius: BorderRadius.circular(7.0),
         side: BorderSide(color: Colors.green)),
       onPressed:(){},
-       color:Colors.green,
+       color:Colors.lime[900],
     child:Text("Follow"),
+              
     
    
     );
@@ -113,7 +119,8 @@ class Card1 extends StatelessWidget{
           
             style:TextStyle(
             color:Colors.black,
-              fontSize:18
+              fontSize:18,
+              fontWeight:FontWeight.w600
             )),
         Text("Posts")
         
@@ -136,7 +143,8 @@ class Card2 extends StatelessWidget{
             
             style:TextStyle(
             color:Colors.black,
-              fontSize:18
+              fontSize:18,
+                            fontWeight:FontWeight.w600
             )),
         
         Text("Followers")  
