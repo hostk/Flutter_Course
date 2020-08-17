@@ -20,13 +20,22 @@ class MyApp extends StatelessWidget{
       children:[
         Container(padding:EdgeInsets.fromLTRB(20,50,0,0),child:TextWidget()),
         Spacer(flex:1),
-               Container(child:Image.network("https://www.mypum.com/wp-content/uploads/2017/01/IMG_7521-min.jpg",width:200),color:Colors.black,margin:EdgeInsets.fromLTRB(10,30,10,0))
+               Container(
+      child:Image.network("https://www.mypum.com/wp-content/uploads/2017/01/IMG_7521-min.jpg",
+                                     
+                                             width:200,fit:BoxFit.cover)
+                 ,color:Colors.black,margin:EdgeInsets.fromLTRB(10,30,10,0))
                ]
       ),
                   Cards(),
                   Images(),
+                 
                   Container(padding:EdgeInsets.all(30),child:IconsView()),
-                  Container(padding:EdgeInsets.fromLTRB(20,0,20,0),child:AboutView())
+                  Divider(
+                    color:Colors.black12,
+                    
+                    thickness:1,
+                  ), Container(padding:EdgeInsets.fromLTRB(30,20,30,0),child:AboutView())
                  ]))
     )
    );
@@ -80,10 +89,13 @@ class Button extends StatelessWidget{
   Widget build(BuildContext context) {
       
     return RaisedButton(
-    
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(7.0),
+        side: BorderSide(color: Colors.green)),
       onPressed:(){},
        color:Colors.green,
     child:Text("Follow"),
+    
    
     );
   }
